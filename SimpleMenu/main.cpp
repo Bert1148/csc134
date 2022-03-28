@@ -6,21 +6,26 @@ int main()
 {
     // menu
     int userChoice = 0;
-    cout << "Simple Menu" << endl;
-    cout << "1. option 1" << endl;
-    cout << "2. Exit" << endl;
-    cout << "choose: ";
-    cin >> userChoice;
-    cout << "You picked " << userChoice << endl;
+    bool keepGoing = true;
+    while (keepGoing) {
 
-    if (userChoice == 1) {
-        cout << "You picked Option 1." << endl;
-    }
-    else if (userChoice == 2) {
-        cout << "Exiting ... goodbye." << endl;
-    }
-    else {
-        cout << "Invalid input, please try again." << endl;
+        cout << "Simple Menu" << endl;
+        cout << "1. option 1" << endl;
+        cout << "2. Exit" << endl;
+        cout << "choose: ";
+        cin >> userChoice;
+        cout << "You picked " << userChoice << endl;
+
+        if (userChoice == 1) {
+            cout << "You picked Option 1." << endl;
+        }
+        else if (userChoice == 2) {
+            cout << "Exiting ... goodbye." << endl;
+            keepGoing = false; // exit loop
+        }
+        else {
+            cout << "Invalid input, please try again." << endl;
+        }
     }
     return 0;
 }
